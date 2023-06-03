@@ -1,0 +1,120 @@
+{% extends 'agency/common/layout.html'%}
+{% block content %}
+{% load static %}
+<br>
+<br>
+<style type="text/css">
+    #size,#pageno,#adtype,#image,input
+    {
+        background: #000;
+    }
+    body,option
+    {
+        color: #fff;
+    }
+</style>
+
+<div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-11 col-xl-11 m-auto">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Add New Ad Type</h6>
+                            <form action="/agency/Add_adtype_store" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Title</label>
+                                    <input type="text" class="form-control" id="title" name="title" 
+                                        aria-describedby="emailHelp" required>
+                                    
+                                </div>
+                                
+                                     
+
+                                    <div class="mb-6">
+                                    <label for="exampleInputPassword1" class="form-label">Description</label>
+                                    <textarea class="form-control" id="description" name="description" required></textarea>
+                                </div>
+                                
+                                <div class="mb-6">
+
+                                    <label for="exampleInputPassword1" class="form-label">Size</label>
+                                    <select id="size" name="size" class="form-control">
+                                        <option value="">--Select Size--</option>
+                                        <option value="10cm * 10cm">10cm*10cm</option>
+                                        <option value="20cm * 20cm">20cm * 20cm</option>
+                                        <option value="30cm * 30cm">30cm * 30cm</option>
+                                        <option value="40cm * 40cm">40cm * 40cm</option>
+                                        <option value="50cm * 50cm">50cm * 50cm</option>
+                                        <option value="60cm * 60cm ">60cm * 60cm</option>
+                                        <option value="60cm * 70cm">60cm * 70cm</option>
+                                        <option value="60cm * 80cm">60cm * 80cm</option>
+                                        <option value="60cm * 90cm">60cm * 90cm</option>
+                                        <option value="60cm * 100cm">60cm * 100cm</option>
+                                        <option value="60cm * 110cm">60cm * 110cm</option>
+                                    </select>
+                                   </div>
+
+
+                                <div class="mb-6">
+                                    <label for="exampleInputEmail1" class="form-label">Price</label>
+                                    <input type="text" class="form-control" id="price" name="price" 
+                                        aria-describedby="emailHelp" required>
+                                   
+                                   </div>
+
+                                    <div class="mb-12">
+                                    <label for="exampleInputPassword1" class="form-label">Page No:</label>
+
+                                    <select id="pageno" name="pageno" class="form-control primary">
+                                        <option value="">--Select Page--</option>
+                                        <option value="1">Page 1</option>
+                                        <option value="2">Page 2</option>
+                                        <option value="3">Page 3</option>
+                                        <option value="4">Page 4</option>
+                                        <option value="5">Page 5</option>
+                                        <option value="6">Page 6</option>
+                                        <option value="7">Page 7</option>
+                                        <option value="8">Page 8</option>
+                                        <option value="9">Page 9</option>
+                                        <option value="10">Page 10</option>
+                                        <option value="11">Page 11</option>
+                                        <option value="12">Page 12</option>
+                                        <option value="13">Page 13</option>
+                                        <option value="14">Page 14</option>
+                                        <option value="15">Page 15</option>
+                                        <option value="16">Page 16</option>
+                                    </select>
+
+                                </div>
+
+                                <div class="mb-6">
+                                    <label for="exampleInputEmail1" class="form-label">Image</label>
+                                    <input type="file" class="form-control" id="image" name="image" 
+                                        aria-describedby="emailHelp" required>
+                                   
+                                   </div>
+                                    <label for="exampleInputEmail1" class="form-label">Select Ad Type</label>
+                                    <select id="adtype" name="adtype" class="form-control">
+                                         <option value="">--select AdType--</option>
+                                        <option value="online">Online</option>
+                                        <option value="offline">Offline</option>
+                                        <option value="Both">Both</option>
+                                       </select>
+                                     
+                                       <br>
+                                       <br>
+                              <div class="col-3 m-auto">
+
+
+                                
+                                <button type="submit" id="submit" name="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                    </div>
+                    <br><br>
+                
+
+            
+{% endblock %}
